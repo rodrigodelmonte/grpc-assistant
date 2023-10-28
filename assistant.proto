@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/rodrigodelmonte/grpc-assistant/assistant";
+
+message AssistantRequest {
+    string request = 1;
+}
+
+message AssistantResponse {
+    string result = 1;
+}
+
+service Assistant {
+    rpc Handle(AssistantRequest) returns (AssistantResponse);
+}
